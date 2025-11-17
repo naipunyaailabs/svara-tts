@@ -1,0 +1,7 @@
+torch
+transformers
+snac
+soundfile
+numpy
+fastapi
+uvicorn
