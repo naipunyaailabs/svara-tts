@@ -4,15 +4,11 @@ import numpy as np
 import soundfile as sf
 from snac import SNAC
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from gpu_config import device
 
 # ---------------------------------------------------------
-# DEVICE
+# DEVICE handled by gpu_config.py
 # ---------------------------------------------------------
-device = torch.device(
-    "cuda" if torch.cuda.is_available() else
-    "mps" if torch.backends.mps.is_available() else
-    "cpu"
-)
 
 # ---------------------------------------------------------
 # LOAD MODELS (cached by HF)

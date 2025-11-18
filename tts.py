@@ -4,15 +4,11 @@ import numpy as np
 from snac import SNAC
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import soundfile as sf
+from gpu_config import device
 
 # -------------------------------------------------
-# Device Selection (CUDA → MPS → CPU)
+# Device Selection handled by gpu_config.py
 # -------------------------------------------------
-device = torch.device(
-    "cuda" if torch.cuda.is_available() else
-    "mps" if torch.backends.mps.is_available() else
-    "cpu"
-)
 
 print(f"Using device: {device}")
 
